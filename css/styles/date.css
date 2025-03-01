@@ -1,0 +1,17 @@
+.date {
+    color: var(--text-secondary) !important;
+    margin: 4px;
+}
+
+.label-date {
+    margin-right: 4px;
+    color: var(--text-secondary) !important;
+}
+
+.field-date {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}

@@ -1,0 +1,42 @@
+.slider {
+    /* width: 100%; */
+    flex-grow: 1;
+    padding: 16px;
+}
+
+.slider-track {
+    background-color: var(--text-primary);
+    border-radius: 5px;
+    height: 8px;
+}
+
+.slider-track:hover {
+    cursor: move;
+    cursor: grab;
+}
+
+.slider-fill {
+    background-color: var(--highlight);
+    border-radius: 5px;
+    width: 6px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+.slider-handle {
+    position: relative;
+    background-color: var(--highlight);
+    border-radius: 20px;
+    width: 20px !important;
+    height: 20px !important;
+    bottom: -8px;
+    right: -10px;
+}
+
+body.grabbing * {
+    cursor: grabbing !important;
+}

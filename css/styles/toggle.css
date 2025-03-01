@@ -1,0 +1,137 @@
+.toggle {
+    display: none;
+}
+
+.toggle-icon {
+    display: block;
+    border: 3px solid var(--text-secondary);
+    border-radius: 5px;
+    width: 24px;
+    height: 24px;
+}
+
+.toggle-label {
+    display: block;
+    border: 3px solid var(--text-secondary);
+    border-radius: 5px;
+    width: max-content;
+    height: 24px;
+}
+
+.toggle-icon>i {
+    user-select: none;
+}
+
+.toggle~.toggle-icon,
+.toggle~.toggle-label {
+    background-color: var(--background);
+    border-color: var(--text-secondary);
+    color: var(--text-secondary);
+}
+
+.toggle:hover~.toggle-icon,
+.toggle:hover~.toggle-label {
+    background-color: var(--text-secondary);
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+    cursor: pointer;
+}
+
+.toggle:checked~.toggle-icon,
+.toggle:checked~.toggle-label {
+    background-color: var(--highlight);
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+.toggle-clear {
+    display: none;
+}
+
+.toggle-icon-on>i {
+    color: var(--text-primary);
+}
+
+.toggle-icon-off>i {
+    color: var(--text-secondary) !important;
+}
+
+.toggle-icon-on>i,
+.toggle-icon-off>i {
+    user-select: none;
+    margin-top: 4px;
+}
+
+.toggle-icon-on:hover,
+.toggle-icon-off:hover {
+    cursor: pointer;
+}
+
+.icon-no-disable>i {
+    color: var(--text-primary) !important;
+}
+
+.toggle-clear~.toggle-icon-on {
+    display: none;
+}
+
+.toggle-clear:checked~.toggle-icon-on {
+    display: block;
+}
+
+.toggle-clear:checked~.toggle-icon-off {
+    display: none;
+}
+
+.toggle-clear~.toggle-icon-off {
+    display: block;
+}
+
+label.collapsible {
+    display: inline-block;
+    width: calc(100% - 4px * 2);
+    margin-left: 4px;
+    margin-right: 4px;
+    height: 24px;
+    text-align: center;
+    background-color: var(--background);
+    border-radius: 5px;
+}
+
+.toggle-clear:checked~label.collapsible {
+    background-color: var(--background-darker);
+}
+
+.toggle-clear~label.collapsible:hover {
+    cursor: pointer;
+    background-color: var(--background-light) !important;
+}
+
+.toggle-clear:checked~label.collapsible:hover {
+    cursor: pointer;
+    /* background-color: var(--background) !important; */
+}
+
+.toggle-clear:hover~.collapse {
+    /* background-color: var(--background) !important; */
+}
+
+.collapse {
+    width: calc(100% - 4px * 2);
+    margin-left: 4px;
+    margin-right: 4px;
+    overflow: hidden;
+}
+
+.collapse-label-vertical:hover {
+    cursor: pointer;
+}
+
+.toggle-clear:not(:checked)~.collapse {
+    height: 0;
+}
+
+.toggle-clear:checked~.collapse {
+    height: fit-content;
+    overflow: visible;
+}

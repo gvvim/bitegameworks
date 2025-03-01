@@ -1,0 +1,79 @@
+/*
+    Rules to control layout, and helper classes
+*/
+
+.spaced {
+    margin: 4px;
+}
+
+.spaced>* {
+    padding: 4px;
+}
+
+.p-l {
+    padding-left: 8px;
+}
+
+.p-r {
+    padding-right: 8px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+}
+
+.m-bot {
+    margin-bottom: 8px;
+}
+
+.rel {
+    position: relative;
+}
+
+.center {
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.fl {
+    float: left;
+    margin: 16px;
+}
+
+.fr {
+    float: right;
+    margin: 16px;
+}
+
+.fit {
+    width: fit-content;
+}
+
+.box {
+    padding: 8px;
+    border-radius: 5px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slash {
+    color: var(--text-secondary);
+}

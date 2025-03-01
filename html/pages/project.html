@@ -1,0 +1,51 @@
+<div class="page-child project-page" id="project-page">
+    <div class="row" style="height: 10%;">
+        <button class="btn btn-action btn-big" id="project-back">
+            <i class="material-icons">keyboard_return</i>
+        </button>
+        <div class="page-top rel">
+            <input type="text" class="page-title editable" id="current-project-title" value="Project title">
+            <i class="material-icons edit-icon">edit</i>
+        </div>
+        <button class="btn btn-action btn-big" id="project-save-changes">
+            <i class="material-icons">save</i>
+        </button>
+        <button class="btn btn-action btn-big" id="project-delete">
+            <i class="material-icons">delete</i>
+        </button>
+    </div>
+    <div class="column rel" style="height: 90%;">
+        <textarea class="page-description editable" rows="3"
+            id="current-project-description">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</textarea>
+        <i class="material-icons edit-icon">edit</i>
+        <div class="row page-options">
+            <div class="spaced">
+                <input type="checkbox" class="toggle" id="project-active" checked>
+                <label for="project-active" class="toggle-label">Active</label>
+            </div>
+
+            <div class="spaced">
+                <input type="checkbox" class="toggle" id="project-priority">
+                <label for="project-priority" class="toggle-label">Priority</label>
+            </div>
+        </div>
+
+        <p class="project-tags-label">Project tags:</p>
+        <div class="project-tags" id="list-tags">
+            <div class="tag" id="tag-default">
+                <input type="color" value="#3F4650" id="project-default-color"><input type="text" class="editable"
+                    disabled value="default">
+            </div>
+            <button class="btn btn-action btn-small btn-tag" id="btn-new-tag">
+                <i class="material-icons">add</i>
+            </button>
+        </div>
+
+        <div class="list-title">Tasks:</div>
+        <div class="list" style="flex-grow: 1;" id="list-tasks">
+            <button class="btn btn-stretch" id="btn-new-task">
+                <i class="material-icons">add</i>
+            </button>
+        </div>
+    </div>
+</div>

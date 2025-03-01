@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BITE Gameworks</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <div id="notifications-root" class="notifications-root"></div>
+    <div class="wrapper" id="main">
+        <div class="navbar-holder">
+            <div><img src="bitelogo.png" class="logo"></div>
+            <nav class="navbar">
+                <div class="navtracker pop-in"></div>
+                <div class="navbar-buttons">
+                    <button class="navbutton selected">
+                        Home
+                    </button>
+                    <button class="navbutton">
+                        Blog
+                    </button>
+                    <!-- <button class="navbutton">
+                        Projects
+                    </button> -->
+                    <button class="navbutton">
+                        About Us
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <div class="content">
+            @@include('./pages/home.html')
+            @@include('./pages/blogs.html')
+            <!-- @@include('./pages/projects.html') -->
+            @@include('./pages/about_us.html')
+        </div>
+        <div class="footer">
+            <div><b>Copyright BITE Gameworks 2025. </b><br class="conditional" /> This website does not use cookies.
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+</body>

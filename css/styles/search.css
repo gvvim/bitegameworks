@@ -1,0 +1,37 @@
+.searchbar {
+    padding: 8px;
+    margin: 16px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    background-color: var(--background);
+}
+
+.input-search {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    background: none;
+    font-size: large;
+}
+
+.input-search::placeholder {
+    color: var(--text-secondary);
+}
+
+.icon-search,
+.icon-cancel {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+}
+
+.icon-search:hover,
+.icon-cancel:hover {
+    cursor: pointer;
+}
+
+.icon-search>label:hover {
+    cursor: pointer;
+}

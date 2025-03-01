@@ -1,0 +1,27 @@
+.actionbar {
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 0 !important;
+    margin-left: 0 !important;
+}
+
+.actionbar>button,
+.actionbar>input {
+    height: 48px;
+    margin-inline: 3px;
+}
+
+.numeric {
+    background-color: var(--background);
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.actionbar>.numeric {
+    margin-right: 8px;
+    min-width: 100px;
+}

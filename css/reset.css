@@ -1,0 +1,97 @@
+/*
+    Rules to remove default styles and css that should not change with theme
+*/
+
+html,
+body {
+    background: var(--background-darker);
+    min-width: 400px;
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    background-color: var(--background-dark);
+    border: 0px;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: var(--text-secondary);
+}
+
+button {
+    background-color: var(--background-light);
+    color: var(--text-secondary);
+    border: none;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+button>i {
+    color: var(--text-secondary);
+    margin: 2px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-dark);
+    margin: auto;
+}
+
+* {
+    color: var(--text-primary);
+    font-family: "Inter", "Century Gothic", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.text-primary {
+    color: var(--text-primary) !important;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--background-light);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+.material-icons {
+    user-select: none;
+}
+
+.input-color {
+    height: 32px;
+    background-color: transparent;
+    border-radius: 5px;
+    border-color: var(--text-secondary);
+}
+
+textarea {
+    resize: none;
+}
+
+#auth {
+    display: none;
+}
+
+.bg-darker {
+    background-color: var(--background-dark);
+}
+
+.bg-darker:hover {
+    background-color: var(--background-darker);
+}

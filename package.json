@@ -1,0 +1,34 @@
+{
+  "name": "bitegameworks",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "watch-html": "gulp default && gulp watch",
+    "start-server": "vite --port 9000",
+    "start": "npm-run-all -p -r start-server watch-html",
+    "build": "gulp default && tsc && vite build",
+    "preview": "vite preview",
+    "test": "echo \"This template does not include a test runner by default.\" && exit 1",
+    "format": "prettier --write \"src/**/*.{ts,js}\"",
+    "lint": "prettier --check \"src/**/*.{ts,js}\""
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.2.0",
+    "lodash.partition": "^4.6.0",
+    "material-icons": "^1.13.14",
+    "zero-md": "^3.1.7"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.0.0",
+    "get-google-fonts": "^1.2.2",
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.3.0",
+    "gulp-imagemin": "^9.1.0",
+    "imagemin-webp": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  }
+}

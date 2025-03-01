@@ -1,0 +1,93 @@
+.navbar {
+    position: relative;
+    width: 100%;
+    /* border: 1px solid white; */
+    z-index: 2;
+}
+
+.navbar-holder {
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px black;
+}
+
+.logo {
+    width: 64px;
+    height: 64px;
+}
+
+.logo-large {
+    width: 400px;
+    height: 400px;
+    align-self: center;
+}
+
+.navbar-buttons {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+}
+
+.navbutton {
+    color: var(--text-secondary);
+    width: 100%;
+    border: none;
+    background-color: var(--background-darker);
+    font-size: large;
+}
+
+@keyframes navbutton-hover {
+    from {
+        font-size: large;
+        background-color: var(--background);
+    }
+
+    to {
+        font-size: larger;
+        background-color: var(--background-light);
+    }
+}
+
+.navbutton:hover:not(.selected) {
+    animation: navbutton-hover 0.75s ease-out;
+    font-size: larger;
+    background-color: var(--background-light);
+    cursor: pointer;
+}
+
+@keyframes navbutton-active {
+    0% {
+        background-color: var(--background-darker);
+    }
+
+    50% {
+        background-color: var(--text-primary);
+    }
+
+    1000% {
+        background-color: var(--background-light);
+    }
+}
+
+.navbutton:active {
+    animation: navbutton-active 0.75s ease-out !important;
+}
+
+.navbutton.selected {
+    color: var(--text-primary);
+    font-size: larger;
+}
+
+.navtracker {
+    position: absolute;
+    border-radius: 5px 5px 0 0;
+    height: 2px;
+    width: 10%;
+    background-color: var(--highlight) !important;
+    bottom: 4px;
+    left: -5000px;
+    margin-left: -5%;
+}

@@ -1,0 +1,79 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.page-child .list {
+    overflow: visible;
+}
+
+.list-title {
+    display: table;
+    white-space: nowrap;
+    font-size: larger;
+    color: var(--text-secondary);
+    margin: 8px;
+    width: calc(100% - 8px);
+    text-align: center;
+}
+
+.list-title::before,
+.list-title::after {
+    border-top: 1px solid var(--background-light);
+    content: ' ';
+    display: table-cell;
+    position: relative;
+    top: 0.5em;
+    width: 45.5%;
+}
+
+.list-title::before {
+    right: 1.5%;
+}
+
+.list-title::after {
+    left: 1.5%;
+}
+
+.list-item {
+    position: relative;
+    width: calc(100% - 4px);
+    min-height: 32px;
+    height: fit-content;
+    margin: 4px;
+    padding: 8px;
+    background-color: var(--background);
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.list-item:hover {
+    cursor: pointer;
+    /* border: 2px solid var(--background-light); */
+    background-color: var(--background-dark);
+}
+
+.list-item-actions {
+    display: none;
+    flex-grow: 0;
+    flex-direction: row;
+}
+
+.list-item-actions>.btn {
+    margin: 8px;
+}
+
+.list-item:hover .list-item-actions {
+    display: flex;
+}
+
+#list-tasks {
+    padding-bottom: 100px;
+}

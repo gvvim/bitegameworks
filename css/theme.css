@@ -1,0 +1,15 @@
+:root {
+    --text-primary: #f3f3f3;
+    --text-secondary: #d5d5d5;
+    --background: #1c1c1c;
+    --background-light: #505356;
+    --background-dark: #101010;
+    --background-darker: #000000;
+    --highlight: #f8f8f8;
+    --highlight-border: #c6c6c6;
+    --success: #1fdc1f;
+    --warn: #c70101;
+    --fade: #000000;
+    --overlay-start: #9a9a9a8c;
+    --overlay-end: #00000000;
+}

@@ -1,0 +1,88 @@
+.project {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 8px;
+}
+
+.project-title {
+    font-size: larger;
+    min-width: 100%;
+}
+
+.project-description {
+    margin-top: 8px;
+    min-width: 100%;
+    color: var(--text-secondary);
+}
+
+.project-page {
+    background-color: var(--background-dark);
+}
+
+.project-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.tag {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 32px !important;
+    overflow: hidden;
+    background-color: var(--background);
+    margin: 4px;
+    border-radius: 5px;
+}
+
+.tag>*>input[type=text] {
+    font-size: medium;
+    width: 98px !important;
+}
+
+.tag>input[type=text] {
+    font-size: medium;
+    width: 130px !important;
+}
+
+.tag>.btn-inset {
+    visibility: hidden;
+}
+
+.tag:hover>.btn-inset {
+    visibility: visible;
+}
+
+.editable {
+    background: transparent;
+    border: none;
+    outline: 0;
+    margin: 4px;
+}
+
+.edit-icon {
+    position: absolute;
+    display: none !important;
+    user-select: none;
+    pointer-events: none;
+    top: 8px;
+    right: 8px;
+}
+
+.editable:hover~.edit-icon,
+.editable:focus~.edit-icon {
+    display: block !important;
+}
+
+.project-tags-label {
+    color: var(--text-secondary);
+    font-size: large;
+    margin: 8px;
+}
