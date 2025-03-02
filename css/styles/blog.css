@@ -2,7 +2,9 @@
     position: relative;
     border: 2px solid var(--background-light);
     border-radius: 8px;
-    min-height: 150px;
+    min-height: 155px;
+    min-width: 200px;
+    max-width: 500px;
     background-color: var(--background-darker);
     display: flex;
     flex-direction: column-reverse;

@@ -1,9 +1,9 @@
 .list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     padding: 8px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .page-child .list {

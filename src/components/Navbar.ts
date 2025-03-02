@@ -25,7 +25,7 @@ export default class Navbar {
 
         // read route from URL and set initial page
         const page = window.location.pathname;
-        console.log(page);
+        // console.log(page);
         switch(page) {
             case this.routes[0]:
             case '/home':

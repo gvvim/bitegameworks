@@ -1,9 +1,11 @@
 import confetti from 'canvas-confetti';
 import ChildPage from "./components/ChildPage";
 import { asyncForEach, readTag } from './util';
+import Searchbar from './components/Searchbar';
 
 class Blog {
     constructor(
+        public id: number,
         public title: string, 
         public author: string, 
         public type: string, 
@@ -43,6 +45,8 @@ export default class Blogs {
         const json = await response.json();
         return json;
     }
+
+    lastId = 0;
     
     async getBlog(blogUrl: string) {
         const response = await fetch(blogUrl);
@@ -59,7 +63,8 @@ export default class Blogs {
         }
         const confetti = readTag(info, 'confetti') === "true";
         
-        const blog = new Blog(title, author, type, date, blogUrl, content, thumbnail, confetti);
+        const blog = new Blog(this.lastId, title, author, type, date, blogUrl, content, thumbnail, confetti);
+        this.lastId++;
         return blog;
     }
     
@@ -77,13 +82,11 @@ export default class Blogs {
     async updateBlogsPage() {
         const blogUrls = await this.getBlogUrls();
         const urls = blogUrls.blogs;
-        console.log(urls);
     
         const blogs: Blog[] = [];
         await asyncForEach(urls, async (url: string) => {
             blogs.push(await this.getBlog(url));
         });
-        console.log(blogs);
     
         // Blog previews
         const blogPreview1 = document.getElementById('blog-latest-1')!;
@@ -111,5 +114,37 @@ export default class Blogs {
             this.viewBlog(blogs[2]);
         };
         // Blogs list (searchable)
+        const blogsList = document.getElementById('list-blogs')!;
+        blogsList.innerHTML = '';
+        blogs.forEach((blog: Blog) => {
+            const blogPreview = blogPreview1.cloneNode(true) as HTMLElement;
+            blogPreview.id = `blog-${blog.id}`;
+            blogPreview.querySelector('.blog-preview-title')!.innerHTML = blog.title;
+            blogPreview.style.backgroundImage = `url(${blog.thumbnail})`;
+            blogPreview.onclick = () => {
+                this.viewBlog(blog);
+            };
+            blogsList.appendChild(blogPreview);
+        });
+
+        // Search bar
+        new Searchbar(
+            <HTMLInputElement>document.getElementById('search-blogs'),
+            document.getElementById('search-blogs-label')!,
+            document.getElementById('search-blogs-clear')!,
+            blogs,
+            'id',
+            ['title', 'content'],
+            (visibleKeys: any[]) => {
+                blogs.forEach(blog => {
+                    const element = blogsList.querySelector(`#blog-${blog.id}`)!;
+                    if (!visibleKeys.includes(blog.id)) {
+                        element.classList.add('hide');
+                    } else {
+                        element.classList.remove('hide');
+                    }
+                });
+            }
+        );
     }
 }

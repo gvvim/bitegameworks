@@ -168,3 +168,7 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.devs>div {
+    margin: 8px;
+}

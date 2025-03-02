@@ -25,24 +25,6 @@ function init() {
     );
 
     new Blogs();
-    // const projectsSearch = new Searchbar(
-    //     <HTMLInputElement>document.getElementById('search-projects'),
-    //     document.getElementById('search-projects-label')!,
-    //     document.getElementById('search-projects-clear')!,
-    //     myProjects,
-    //     'id',
-    //     ['title', 'description'],
-    //     (visibleKeys: any[]) => {
-    //         myProjects.forEach(project => {
-    //             const element = listProjects.querySelector('#project-' + project.id)!.parentElement!;
-    //             if (!visibleKeys.includes(project.id)) {
-    //                 element.classList.add('hide');
-    //             } else {
-    //                 element.classList.remove('hide');
-    //             }
-    //         });
-    //     }
-    // );
 
     // Test notifs
     /*let z = 0;
