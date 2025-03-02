@@ -19,6 +19,7 @@
     flex-direction: column;
     justify-content: flex-start;
     overflow: hidden;
+    animation: fade-in 0.3s ease-in;
 }
 
 .page-parent,
@@ -123,14 +124,11 @@
     text-align: center;
 }
 
-@media screen {
-    
-}
-
 .steam-embed {
     margin: auto;
-    min-width: 550px;
-    min-height: 250px;
+    width: calc(100% - 32px);
+    max-width: 700px;
+    min-height: 200px;
     border: none;
 }
 

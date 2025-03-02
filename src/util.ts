@@ -65,3 +65,7 @@ export async function asyncForEach<T>(array: Array<T>, callback: (item: T, index
         await callback(array[index], index);
     }
 }
+
+export function updateURL(url: string) {
+    window.history.replaceState({ additionalInformation: 'Updated the URL with JS' },'', url);
+}

@@ -1,9 +1,11 @@
-import { animate, lerp } from "../../src/util";
+import { animate, lerp, updateURL } from "../util";
 
 export default class Navbar {
     buttons: HTMLElement[];
     pages: HTMLElement[];
     tracker: HTMLElement;
+
+    readonly routes = ['/', '/blogs', '/about_us'];
 
     public constructor(buttons: HTMLElement[], pages: HTMLElement[], tracker: HTMLElement) {
         this.buttons = buttons;
@@ -20,10 +22,48 @@ export default class Navbar {
         for (let i = 0; i < this.buttons.length; i++) {
             this.buttons[i].onclick = () => this.navSelect(i);
         }
+
+        // read route from URL and set initial page
+        const page = window.location.pathname;
+        console.log(page);
+        switch(page) {
+            case this.routes[0]:
+            case '/home':
+                break;
+            case this.routes[1]:
+                this.setSelected(1);
+                break;
+            case this.routes[2]:
+                this.setSelected(2);
+                break;
+        }
     }
 
-    navSelect(index: number) {
+    setSelected(index: number) {
+        const navButtons = this.buttons;
+        navButtons.forEach(element => {
+            element.className = 'navbutton';
+        });
+        navButtons[index].className = 'navbutton selected';
+
+        const n = navButtons.length;
+
+        // Update tracker position (lerp over time)
+        const trackerOffset = (100 * (index / n + 0.5 / n));
+        const tracker = this.tracker;
+
+        tracker.style.left = trackerOffset + '%';
+
+        // const pages = [...document.getElementById("content").getElementsByClassName("page")];
+        this.pages.forEach((element, i) => {
+            const newValue = 100 * (i - index);
+            element.style.left = newValue + '%';
+        });
+    }
+
+    navSelect(index: number, time = 30) {
         // Update 'selected' button
+        updateURL(this.routes[index]);
         const navButtons = this.buttons;
         navButtons.forEach(element => {
             element.className = 'navbutton';
@@ -43,7 +83,7 @@ export default class Navbar {
         animate((t) => {
             const newValue = lerp(lastOffset, trackerOffset, t);
             tracker.style.left = newValue + '%';
-        }, 50);
+        }, time);
 
         // const pages = [...document.getElementById("content").getElementsByClassName("page")];
         this.pages.forEach((element, i) => {
@@ -54,7 +94,7 @@ export default class Navbar {
             animate((t) => {
                 const newValue = lerp(lastPosition, (100 * (i - index)), t);
                 element.style.left = newValue + '%';
-            }, 50);
+            }, time);
         });
     }
 }

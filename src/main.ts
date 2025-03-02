@@ -1,5 +1,4 @@
 import 'material-icons/iconfont/material-icons.css';
-// import '../index.css';
 // Import element definition
 // @ts-ignore no type definitions
 import ZeroMd from 'zero-md'
@@ -68,4 +67,5 @@ function init() {
     }, 1000);*/
 }
 
-window.document.body.onload = init;
+init();
+// window.document.body.onload = init; // this adds a noticeable delay to routing
