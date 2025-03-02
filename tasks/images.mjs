@@ -8,7 +8,7 @@ const images = () => {
     // to really pull down asset sizes
     console.log(`[GULP-TASK] optimize images`);
     return gulp
-        .src('./public/**/*')
+        .src('./res/**/*')
         .pipe(
             imagemin(
                 [
@@ -20,7 +20,7 @@ const images = () => {
                 }
             )
         )
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('./public'))
 }
 
 export default images

@@ -4,9 +4,9 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "watch-html": "gulp default && gulp watch",
-    "start-server": "vite --port 9000",
-    "start": "npm-run-all -p -r start-server watch-html",
+    "watch": "gulp default && gulp watch",
+    "server": "vite --port 9000",
+    "start": "npm-run-all -p -r server watch",
     "build": "gulp default && tsc && vite build",
     "preview": "vite preview",
     "test": "echo \"This template does not include a test runner by default.\" && exit 1",
