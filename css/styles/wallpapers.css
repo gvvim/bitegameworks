@@ -1,0 +1,26 @@
+.wallpaper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.5;
+}
+
+.wallpaper-about-us {
+    background-color: rgb(42, 42, 42);
+    background-image: url('/images/wallpaper_about_us.jpg');
+    background-blend-mode: multiply;
+    background-size: 200px;
+}
+
+.wallpaper-home {
+    background-color: rgb(0, 0, 0);
+}
+
+.wallpaper-blogs {
+    background-color: rgb(42, 42, 42);
+    background-image: url('/images/wallpaper_blogs.jpg');
+    background-blend-mode: multiply;
+    background-size: 200px;
+}

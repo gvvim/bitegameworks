@@ -1,48 +1,52 @@
 <div class="page">
-    <h1 class="page-title">BLOG</h1>
-    <div class="page-parent">
+    <div class="wallpaper wallpaper-blogs"></div>
+    <div class="page-content">
+        <h1 class="page-title">BLOG</h1>
+        <div class="page-parent">
 
-        <div class="list-title">Latest</div>
-        <div class="blogs-horizontal">
-            @@include('./components/blog_preview.html', { id: 'blog-latest-1' })
-            <div class="blogs-vertical">
-                @@include('./components/blog_preview.html', { id: 'blog-latest-2' })
-                @@include('./components/blog_preview.html', { id: 'blog-latest-3' })
+            <div class="list-title">Latest</div>
+            <div class="blogs-horizontal">
+                @@include('./components/blog_preview.html', { id: 'blog-latest-1' })
+                <div class="blogs-vertical">
+                    @@include('./components/blog_preview.html', { id: 'blog-latest-2' })
+                    @@include('./components/blog_preview.html', { id: 'blog-latest-3' })
+                </div>
+            </div>
+
+            <div class="list-title">All Blogs</div>
+            @@include('./components/searchbar.html', { input_id: 'search-blogs', clear_id: 'search-blogs-clear',
+            label_id:
+            'search-blogs-label'})
+            <div class="list" id="list-blogs">
             </div>
         </div>
+        <div class="page-child project-page" id="blog-page">
+            <button class="btn btn-action btn-big" id="blog-back">
+                <i class="material-icons">keyboard_return</i>
+            </button>
+            <div class="blog-md">
+                <zero-md src="/blogs/test.md">
+                    # Blog not found!
+                    <template>
+                        <style>
+                            info {
+                                display: none;
+                            }
 
-        <div class="list-title">All Blogs</div>
-        @@include('./components/searchbar.html', { input_id: 'search-blogs', clear_id: 'search-blogs-clear', label_id:
-        'search-blogs-label'})
-        <div class="list" id="list-blogs">
-        </div>
-    </div>
-    <div class="page-child project-page" id="blog-page">
-        <button class="btn btn-action btn-big" id="blog-back">
-            <i class="material-icons">keyboard_return</i>
-        </button>
-        <div class="blog-md">
-            <zero-md src="/blogs/test.md">
-                # Blog not found!
-                <template>
-                    <style>
-                        info {
-                            display: none;
-                        }
+                            img {
+                                max-width: 900px;
+                            }
 
-                        img {
-                            max-width: 900px;
-                        }
-
-                        code {
-                            border: 2px solid var(--background-light);
-                            background-color: var(--background) !important;
-                        }
-                    </style>
-                    <link rel="stylesheet"
-                        href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github-dark.min.css" />
-                </template>
-            </zero-md>
+                            code {
+                                border: 2px solid var(--background-light);
+                                background-color: var(--background) !important;
+                            }
+                        </style>
+                        <link rel="stylesheet"
+                            href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github-dark.min.css" />
+                    </template>
+                </zero-md>
+            </div>
         </div>
     </div>
 </div>

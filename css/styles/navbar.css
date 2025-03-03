@@ -1,20 +1,18 @@
 .navbar {
-    position: relative;
-    width: 100%;
-    /* border: 1px solid white; */
-    z-index: 2;
-}
-
-.navbar-holder {
     display: flex;
     flex-direction: horizontal;
     justify-content: space-between;
-    box-shadow: 0px 0px 10px black;
+}
+
+nav {
+    position: relative;
+    width: 100%;
 }
 
 .logo {
     width: 64px;
     height: 64px;
+    /* z-index: 3; */
 }
 
 .logo-large {

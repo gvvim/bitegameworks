@@ -5,6 +5,8 @@ export default class Navbar {
     pages: HTMLElement[];
     tracker: HTMLElement;
 
+    lastIndex: number = 0;
+
     readonly routes = ['/', '/blogs', '/about_us'];
 
     public constructor(buttons: HTMLElement[], pages: HTMLElement[], tracker: HTMLElement) {
@@ -29,6 +31,7 @@ export default class Navbar {
         switch(page) {
             case this.routes[0]:
             case '/home':
+                this.setSelected(0);
                 break;
             case this.routes[1]:
                 this.setSelected(1);
@@ -58,10 +61,21 @@ export default class Navbar {
         this.pages.forEach((element, i) => {
             const newValue = 100 * (i - index);
             element.style.left = newValue + '%';
+            const wallpaper = element.querySelector('.wallpaper')! as HTMLElement;
+
+            if (i == index) {
+                wallpaper.style.opacity = `1`;
+            } else {
+                wallpaper.style.opacity = `0`;
+            }
         });
+
+        this.lastIndex = index;
     }
 
     navSelect(index: number, time = 30) {
+        if (this.lastIndex == index) return;
+        
         // Update 'selected' button
         updateURL(this.routes[index]);
         const navButtons = this.buttons;
@@ -69,9 +83,9 @@ export default class Navbar {
             element.className = 'navbutton';
         });
         navButtons[index].className = 'navbutton selected';
-
+        
         const n = navButtons.length;
-
+        
         // Update tracker position (lerp over time)
         const trackerOffset = (100 * (index / n + 0.5 / n));
         const tracker = this.tracker;
@@ -79,14 +93,17 @@ export default class Navbar {
         if (isNaN(lastOffset)) {
             lastOffset = (100 * (0 / n + 0.5 / n));
         }
-
+        
         animate((t) => {
             const newValue = lerp(lastOffset, trackerOffset, t);
             tracker.style.left = newValue + '%';
         }, time);
-
+        
+        const lastIndex = this.lastIndex;
         // const pages = [...document.getElementById("content").getElementsByClassName("page")];
         this.pages.forEach((element, i) => {
+            const wallpaper = element.querySelector('.wallpaper')! as HTMLElement;
+
             let lastPosition = parseInt(element.style.left);
             if (isNaN(lastPosition)) {
                 lastPosition = (100 * i);
@@ -95,6 +112,16 @@ export default class Navbar {
                 const newValue = lerp(lastPosition, (100 * (i - index)), t);
                 element.style.left = newValue + '%';
             }, time);
+            
+            animate((t) => {
+                if (i == lastIndex) {
+                    wallpaper.style.opacity = `${1.0 - t}`;
+                } else if (i == index) {
+                    wallpaper.style.opacity = `${t}`;
+                }
+            }, time * 2.0);
         });
+
+        this.lastIndex = index;
     }
 }
