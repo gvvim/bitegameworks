@@ -21,11 +21,17 @@
             </div>
         </div>
         <div class="page-child project-page" id="blog-page">
-            <button class="btn btn-action btn-big" id="blog-back">
-                <i class="material-icons">keyboard_return</i>
-            </button>
+            <div class="blog-about">
+                <button class="btn btn-action btn-big" id="blog-back">
+                    <i class="material-icons">keyboard_return</i>
+                </button>
+                <div><span id="blog-about-type" class="blog-about-tutorial">Tutorial</span> written by
+                    <span id="blog-about-author" class="blog-about-author">Gwim</span> on
+                    <span id="blog-about-date" class="blog-about-date">09-09-2025</span>
+                </div>
+            </div>
             <div class="blog-md">
-                <zero-md src="/blogs/test.md">
+                <zero-md src="/blogs/this_website.md">
                     # Blog not found!
                     <template>
                         <style>
@@ -40,6 +46,22 @@
                             code {
                                 border: 2px solid var(--background-light);
                                 background-color: var(--background) !important;
+                            }
+
+                            a:link {
+                                color: rgb(0, 195, 255);
+                            }
+
+                            a:active {
+                                color: rgb(0, 136, 255);
+                            }
+
+                            a:visited {
+                                color: rgb(255, 0, 195);
+                            }
+
+                            a:hover {
+                                color: rgb(0, 247, 255);
                             }
                         </style>
                         <link rel="stylesheet"

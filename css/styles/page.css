@@ -74,6 +74,11 @@
     text-align: center;
 }
 
+a:link { color: rgb(0, 195, 255); }
+a:active { color: rgb(0, 136, 255); }
+a:visited { color: rgb(255, 0, 195); }
+a:hover { color: rgb(0, 247, 255); }
+
 .page-subtitle {
     font-size: 32px !important;
     font-family: "Bebas Neue";

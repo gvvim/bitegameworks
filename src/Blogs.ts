@@ -20,6 +20,9 @@ class Blog {
 export default class Blogs {
 
     private mdView: Element;
+    private aboutType: Element;
+    private aboutAuthor: Element;
+    private aboutDate: Element;
     private blogPage: ChildPage;
 
     constructor() {
@@ -35,7 +38,9 @@ export default class Blogs {
         });
 
         this.mdView = this.blogPage.childPage.querySelector('zero-md')!;
-
+        this.aboutType = this.blogPage.childPage.querySelector('#blog-about-type')!;
+        this.aboutAuthor = this.blogPage.childPage.querySelector('#blog-about-author')!;
+        this.aboutDate = this.blogPage.childPage.querySelector('#blog-about-date')!;
         this.updateBlogsPage();
         // blogPage.open();
     }
@@ -70,6 +75,21 @@ export default class Blogs {
     
     async viewBlog(blog: Blog) {
         this.mdView.setAttribute('src', blog.url);
+        const type =  blog.type.toUpperCase();
+        this.aboutType.innerHTML = type;
+        switch(type) {
+            case "TUTORIAL":
+                this.aboutType.className = "blog-about-tutorial";
+            break;
+            case "NEWS":
+                this.aboutType.className = "blog-about-news";
+            break;
+            default:
+                break;
+        }
+        this.aboutAuthor.innerHTML = blog.author;
+        this.aboutDate.innerHTML = blog.date.toLocaleDateString();
+
         if (blog.confetti) {
             confetti.create(document.getElementById('canvas') as HTMLCanvasElement, {
                 resize: true,
@@ -95,24 +115,29 @@ export default class Blogs {
         if(urls.length > 0) {
             blogPreview1.querySelector('.blog-preview-title')!.innerHTML = blogs[0].title;
             blogPreview1.style.backgroundImage = `url(${blogs[0].thumbnail})`;
+            blogPreview1.onclick = () => {
+                this.viewBlog(blogs[0]);
+            };
+        } else {
+            blogPreview1.remove();
         }
         if(urls.length > 1) {
             blogPreview2.querySelector('.blog-preview-title')!.innerHTML = blogs[1].title;
             blogPreview2.style.backgroundImage = `url(${blogs[1].thumbnail})`;
+            blogPreview2.onclick = () => {
+                this.viewBlog(blogs[1]);
+            };
+        } else {
+            blogPreview2.parentElement?.remove();
         }
         if(urls.length > 2) {
             blogPreview3.querySelector('.blog-preview-title')!.innerHTML = blogs[2].title;
             blogPreview3.style.backgroundImage = `url(${blogs[2].thumbnail})`;
+            blogPreview3.onclick = () => {
+                this.viewBlog(blogs[2]);
+            };
         }
-        blogPreview1.onclick = () => {
-            this.viewBlog(blogs[0]);
-        };
-        blogPreview2.onclick = () => {
-            this.viewBlog(blogs[1]);
-        };
-        blogPreview3.onclick = () => {
-            this.viewBlog(blogs[2]);
-        };
+
         // Blogs list (searchable)
         const blogsList = document.getElementById('list-blogs')!;
         blogsList.innerHTML = '';

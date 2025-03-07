@@ -62,7 +62,35 @@
     margin: auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.blog-about {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    font-family: "Bebas Neue";
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.blog-about-tutorial {
+    color: rgb(26, 227, 26);
+}
+
+.blog-about-news {
+    color: rgb(48, 132, 248);
+}
+
+.blog-about-author {
+    color: rgb(241, 76, 58);
+    font-weight: 700;
+}
+
+.blog-about-date {
+    color: rgb(159, 159, 159);
 }
 
 .blogs-vertical {
