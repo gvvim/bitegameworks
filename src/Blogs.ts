@@ -98,6 +98,19 @@ export default class Blogs {
         }
         this.blogPage.open();
     }
+
+    populatePreview(preview: HTMLElement, blog: Blog) {
+        preview.querySelector('.blog-preview-title')!.innerHTML = blog.title;
+        const typeEl = preview.querySelector('.blog-preview-type')! as HTMLElement;
+        typeEl.innerHTML = blog.type;
+        if (blog.type == 'tutorial') {
+            typeEl.style.backgroundColor = 'var(--blog-type-tutorial)';
+        } else {
+            typeEl.style.backgroundColor = 'var(--blog-type-news)';
+        }
+        preview.querySelector('.blog-preview-date')!.innerHTML = blog.date.toLocaleDateString();
+        preview.style.backgroundImage = `url(${blog.thumbnail})`;
+    }
     
     async updateBlogsPage() {
         const blogUrls = await this.getBlogUrls();
@@ -113,8 +126,7 @@ export default class Blogs {
         const blogPreview2 = document.getElementById('blog-latest-2')!;
         const blogPreview3 = document.getElementById('blog-latest-3')!;
         if(urls.length > 0) {
-            blogPreview1.querySelector('.blog-preview-title')!.innerHTML = blogs[0].title;
-            blogPreview1.style.backgroundImage = `url(${blogs[0].thumbnail})`;
+            this.populatePreview(blogPreview1, blogs[0]);
             blogPreview1.onclick = () => {
                 this.viewBlog(blogs[0]);
             };
@@ -122,8 +134,7 @@ export default class Blogs {
             blogPreview1.remove();
         }
         if(urls.length > 1) {
-            blogPreview2.querySelector('.blog-preview-title')!.innerHTML = blogs[1].title;
-            blogPreview2.style.backgroundImage = `url(${blogs[1].thumbnail})`;
+            this.populatePreview(blogPreview2, blogs[1]);
             blogPreview2.onclick = () => {
                 this.viewBlog(blogs[1]);
             };
@@ -131,8 +142,7 @@ export default class Blogs {
             blogPreview2.parentElement?.remove();
         }
         if(urls.length > 2) {
-            blogPreview3.querySelector('.blog-preview-title')!.innerHTML = blogs[2].title;
-            blogPreview3.style.backgroundImage = `url(${blogs[2].thumbnail})`;
+            this.populatePreview(blogPreview3, blogs[2]);
             blogPreview3.onclick = () => {
                 this.viewBlog(blogs[2]);
             };
@@ -144,8 +154,7 @@ export default class Blogs {
         blogs.forEach((blog: Blog) => {
             const blogPreview = blogPreview1.cloneNode(true) as HTMLElement;
             blogPreview.id = `blog-${blog.id}`;
-            blogPreview.querySelector('.blog-preview-title')!.innerHTML = blog.title;
-            blogPreview.style.backgroundImage = `url(${blog.thumbnail})`;
+            this.populatePreview(blogPreview, blog);
             blogPreview.onclick = () => {
                 this.viewBlog(blog);
             };

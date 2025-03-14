@@ -53,6 +53,36 @@
     text-shadow: 0px 0px 8px black;
 }
 
+.blog-preview-type {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-family: "Bebas Neue";
+    font-size: 24px;
+    text-align: left;
+    z-index: 2;
+    background-color: var(--blog-type-tutorial);
+}
+
+.blog-preview-date {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    font-family: "Bebas Neue";
+    font-size: 20px;
+    text-align: left;
+    z-index: 2;
+    background-color: var(--blog-date);
+}
+
 .blog-md {
     margin: 32px;
 }
@@ -77,20 +107,20 @@
 }
 
 .blog-about-tutorial {
-    color: rgb(26, 227, 26);
+    color: var(--blog-type-tutorial);
 }
 
 .blog-about-news {
-    color: rgb(48, 132, 248);
+    color: var(--blog-type-news);
 }
 
 .blog-about-author {
-    color: rgb(241, 76, 58);
+    color: var(--blog-author);
     font-weight: 700;
 }
 
 .blog-about-date {
-    color: rgb(159, 159, 159);
+    color: var(--blog-date);
 }
 
 .blogs-vertical {

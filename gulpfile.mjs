@@ -15,6 +15,7 @@ import blogs from './tasks/blogs.mjs';
 const watcher = () => {
     gulpWatch('./html/**/*', { ignoreInitial: true }, includes);
     gulpWatch('./res/**/*', { ignoreInitial: true }, resToPublic);
+    gulpWatch('./res/blogs/*', { ignoreInitial: true }, blogs);
 }
 
 // The default (if someone just runs `gulp`) is to run each task in parallel

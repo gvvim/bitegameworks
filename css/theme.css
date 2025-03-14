@@ -12,4 +12,9 @@
     --fade: #000000;
     --overlay-start: #9a9a9a8c;
     --overlay-end: #00000000;
+
+    --blog-type-tutorial: rgb(9, 193, 9);
+    --blog-type-news: rgb(48, 132, 248);
+    --blog-author: rgb(241, 76, 58);
+    --blog-date: rgb(159, 159, 159);
 }

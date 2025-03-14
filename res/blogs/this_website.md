@@ -3,7 +3,7 @@
 <info>
 	<title>This website</title>
 	<author>Gwim</author>
-	<date>2025-03-09</date>
+	<date>2025-03-18</date>
 	<type>tutorial</type>
 	<thumbnail>/bitelogo.png</thumbnail>
 	<confetti>false</confetti>
