@@ -49,8 +49,8 @@
 .btn-icon {
     width: 32px;
     height: 32px;
-    padding: 0;
-    margin: 0;
+    padding: 0 !important;
+    margin: auto !important;
     background: none;
 }
 
