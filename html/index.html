@@ -6,18 +6,18 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="./css/index.css">
     <script type="module" src="./src/main.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="google-site-verification" content="1yR7N4Pr2Q3KHAQxlQPkxdx7WIajuca5ZFcByCgxizc" />
     <meta charset="UTF-8" />
 </head>
 
 <body>
+    <div class="wallpapers">
+        <div class="wallpaper" id="wallpaper-home"></div>
+        <div class="wallpaper" id="wallpaper-blogs"></div>
+        <div class="wallpaper" id="wallpaper-about-us"></div>
+    </div>
     <div class="wrapper" id="main">
-        <div class="content">
-            @@include('./pages/home.html')
-            @@include('./pages/blogs.html')
-            <!-- @@include('./pages/projects.html') -->
-            @@include('./pages/about_us.html')
-        </div>
         <div class="header navbar">
             <img src="bitelogo.png" class="logo">
             <nav>
@@ -38,9 +38,17 @@
                 </div>
             </nav>
         </div>
+        <div class="content">
+            @@include('./pages/home.html')
+            @@include('./pages/blogs.html')
+            <!-- @@include('./pages/projects.html') -->
+            @@include('./pages/about_us.html')
+        </div>
         <div class="footer">
             <div><b>Copyright BITE Gameworks 2025. </b><br class="conditional" /> This website does not use cookies.
             </div>
         </div>
     </div>
 </body>
+
+</html>

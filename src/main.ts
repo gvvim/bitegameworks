@@ -17,13 +17,7 @@ function init() {
     const root = document.getElementById('notifications-root')!;
     Notifications.root = root;
     
-    const mainPage = document.getElementById("main")!;
-    new Navbar(
-        [...mainPage.getElementsByClassName('navbar-buttons')[0].getElementsByTagName('button')],
-        <HTMLElement[]><any>[...mainPage.querySelector(".content")!.getElementsByClassName('page')],
-        mainPage.querySelector('.navtracker')!
-    );
-
+    new Navbar();
     new Blogs();
 
     // Test notifs

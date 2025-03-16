@@ -3,16 +3,20 @@ import { animate, lerp, updateURL } from "../util";
 export default class Navbar {
     buttons: HTMLElement[];
     pages: HTMLElement[];
+    wallpapers: HTMLElement[];
     tracker: HTMLElement;
 
     lastIndex: number = 0;
 
     readonly routes = ['/', '/blogs', '/about_us'];
 
-    public constructor(buttons: HTMLElement[], pages: HTMLElement[], tracker: HTMLElement) {
-        this.buttons = buttons;
-        this.pages = pages;
-        this.tracker = tracker;
+    public constructor() {
+        const mainPage = document.getElementById("main")!;
+
+        this.buttons = [...mainPage.getElementsByClassName('navbar-buttons')[0].getElementsByTagName('button')];
+        this.pages = <HTMLElement[]>[...mainPage.querySelector(".content")!.getElementsByClassName('page')];
+        this.wallpapers = <HTMLElement[]>[...document.body.querySelector(".wallpapers")!.getElementsByClassName('wallpaper')];
+        this.tracker = <HTMLElement>mainPage.querySelector('.navtracker');
 
         const trackerOffset = (100 * (0.5 / this.buttons.length));
         this.tracker.style.left = trackerOffset + '%';
@@ -61,7 +65,7 @@ export default class Navbar {
         this.pages.forEach((element, i) => {
             const newValue = 100 * (i - index);
             element.style.left = newValue + '%';
-            const wallpaper = element.querySelector('.wallpaper')! as HTMLElement;
+            const wallpaper = this.wallpapers[i];
 
             if (i == index) {
                 wallpaper.style.opacity = `1`;
@@ -102,7 +106,7 @@ export default class Navbar {
         const lastIndex = this.lastIndex;
         // const pages = [...document.getElementById("content").getElementsByClassName("page")];
         this.pages.forEach((element, i) => {
-            const wallpaper = element.querySelector('.wallpaper')! as HTMLElement;
+            const wallpaper = this.wallpapers[i];
 
             let lastPosition = parseInt(element.style.left);
             if (isNaN(lastPosition)) {

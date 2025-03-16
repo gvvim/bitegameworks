@@ -1,74 +1,70 @@
 <div class="page">
-    <div class="wallpaper wallpaper-blogs"></div>
-    <div class="page-content">
-        <h1 class="page-title">BLOG</h1>
-        <div class="page-parent">
-
-            <div class="list-title">Latest</div>
-            <div class="blogs-horizontal">
-                @@include('./components/blog_preview.html', { id: 'blog-latest-1' })
-                <div class="blogs-vertical">
-                    @@include('./components/blog_preview.html', { id: 'blog-latest-2' })
-                    @@include('./components/blog_preview.html', { id: 'blog-latest-3' })
-                </div>
-            </div>
-
-            <div class="list-title">All Blogs</div>
-            @@include('./components/searchbar.html', { input_id: 'search-blogs', clear_id: 'search-blogs-clear',
-            label_id:
-            'search-blogs-label'})
-            <div class="list" id="list-blogs">
+    <h1 class="page-title">BLOG</h1>
+    <div class="page-parent">
+        <div class="list-title">Latest</div>
+        <div class="blogs-horizontal">
+            @@include('./components/blog_preview.html', { id: 'blog-latest-1' })
+            <div class="blogs-vertical">
+                @@include('./components/blog_preview.html', { id: 'blog-latest-2' })
+                @@include('./components/blog_preview.html', { id: 'blog-latest-3' })
             </div>
         </div>
-        <div class="page-child project-page" id="blog-page">
-            <div class="blog-about">
-                <button class="btn btn-action btn-big" id="blog-back">
-                    <i class="material-icons">keyboard_return</i>
-                </button>
-                <div><span id="blog-about-type" class="blog-about-tutorial">Tutorial</span> posted by
-                    <span id="blog-about-author" class="blog-about-author">Gwim</span> on
-                    <span id="blog-about-date" class="blog-about-date">09-09-2025</span>
-                </div>
+
+        <div class="list-title">All Blogs</div>
+        @@include('./components/searchbar.html', { input_id: 'search-blogs', clear_id: 'search-blogs-clear',
+        label_id:
+        'search-blogs-label'})
+        <div class="list" id="list-blogs">
+        </div>
+    </div>
+    <div class="page-child project-page" id="blog-page">
+        <div class="blog-about">
+            <button class="btn btn-action btn-big" id="blog-back">
+                <i class="material-icons">keyboard_return</i>
+            </button>
+            <div><span id="blog-about-type" class="blog-about-tutorial">Tutorial</span> posted by
+                <span id="blog-about-author" class="blog-about-author">Gwim</span> on
+                <span id="blog-about-date" class="blog-about-date">09-09-2025</span>
             </div>
-            <div class="blog-md">
-                <zero-md src="/blogs/this_website.md">
-                    # Blog not found!
-                    <template>
-                        <style>
-                            info {
-                                display: none;
-                            }
+        </div>
+        <div class="blog-md">
+            <zero-md src="/blogs/this_website.md">
+                # Blog not found!
+                <template>
+                    <style>
+                        info {
+                            display: none;
+                        }
 
-                            img {
-                                max-width: 900px;
-                            }
+                        img {
+                            max-width: 900px;
+                        }
 
-                            code {
-                                border: 2px solid var(--background-light);
-                                background-color: var(--background) !important;
-                            }
+                        code {
+                            border: 2px solid var(--background-light);
+                            background-color: var(--background) !important;
+                        }
 
-                            a:link {
-                                color: rgb(0, 195, 255);
-                            }
+                        a:link {
+                            color: rgb(0, 195, 255);
+                        }
 
-                            a:active {
-                                color: rgb(0, 136, 255);
-                            }
+                        a:active {
+                            color: rgb(0, 136, 255);
+                        }
 
-                            a:visited {
-                                color: rgb(255, 0, 195);
-                            }
+                        a:visited {
+                            color: rgb(255, 0, 195);
+                        }
 
-                            a:hover {
-                                color: rgb(0, 247, 255);
-                            }
-                        </style>
-                        <link rel="stylesheet"
-                            href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github-dark.min.css" />
-                    </template>
-                </zero-md>
-            </div>
+                        a:hover {
+                            color: rgb(0, 247, 255);
+                        }
+                    </style>
+                    <link rel="stylesheet"
+                        href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11/styles/github-dark.min.css" />
+                </template>
+            </zero-md>
         </div>
     </div>
 </div>
