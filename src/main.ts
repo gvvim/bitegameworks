@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 // import Searchbar from "./components/Searchbar";
 import { Notifications } from "./Notifications";
 import Blogs from "./Blogs";
+import Embeds from './Embeds';
 
 export { }
 
@@ -19,6 +20,7 @@ function init() {
     
     new Navbar();
     new Blogs();
+    new Embeds();
 
     // Test notifs
     /*let z = 0;

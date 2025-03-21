@@ -146,6 +146,8 @@ export default class Blogs {
             blogPreview3.onclick = () => {
                 this.viewBlog(blogs[2]);
             };
+        } else {
+            blogPreview3?.remove();
         }
 
         // Blogs list (searchable)

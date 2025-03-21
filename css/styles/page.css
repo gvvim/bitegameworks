@@ -144,6 +144,44 @@ a:hover { color: rgb(0, 247, 255); }
     border: none;
 }
 
+.itch-embed {
+    margin: auto;
+    width: calc(100% - 32px);
+    max-width: 700px;
+    min-height: 200px;
+    border: none;
+}
+
+.youtube-embed {
+    position: relative;
+    margin: auto;
+    width: calc(100% - 32px);
+    min-height: 250px;
+    border: 1px solid var(--background-light);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.youtube-embed>img {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.youtube-embed::after {
+    content: " ";
+    background-image: url('/youtube_play.svg');
+    min-width: 100px;
+    min-height: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+
 .feature {
     font-weight: bold;
     margin-left: 32px;
