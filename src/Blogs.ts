@@ -46,7 +46,8 @@ export default class Blogs {
     }
 
     async getBlogUrls() {
-        const response = await fetch("/blogs.json");
+        // Add current date so we don't cache the bloglist
+        const response = await fetch(`/blogs.json?p=${new Date().getDate()}`);
         const json = await response.json();
         return json;
     }

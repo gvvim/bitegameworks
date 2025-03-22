@@ -1,0 +1,29 @@
+.viewable {
+    cursor: zoom-in;
+}
+
+.viewable:hover {
+    outline: 1px solid var(--background);
+}
+
+.viewer-root {
+    cursor: zoom-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.472);
+    backdrop-filter: blur(5px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.viewer-content {
+    min-width: 100px;
+    min-height: 100px;
+    width: 95vw;
+    height: 95vh;
+    object-fit: contain;
+}

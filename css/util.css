@@ -2,7 +2,7 @@
     Rules to add functionality
 */
 
-@media only screen and (min-width: 1100px) {
+@media all and (min-width: 1100px) {
     .wrapper, .header, .footer {
         width: 1100px !important;
     }
@@ -37,6 +37,14 @@
     .conditional {
         display: none;
     }
+
+    .conditional-invert {
+        display: inline !important;
+    }
+}
+
+.conditional-invert {
+    display: none;
 }
 
 .pop-in {

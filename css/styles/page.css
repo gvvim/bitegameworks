@@ -131,9 +131,35 @@ a:hover { color: rgb(0, 247, 255); }
     color: var(--text-secondary);
     background-color: var(--background-dark);
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     text-align: center;
+}
+
+.footer-text {
+    flex-grow: 11;
+}
+
+.footer-icons {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-icons>a, .footer-icons>a>img {
+    width: 32px;
+    height: 32px;
+}
+
+.footer-icons>a {
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid var(--background-light);
 }
 
 .steam-embed {
@@ -172,7 +198,7 @@ a:hover { color: rgb(0, 247, 255); }
 
 .youtube-embed::after {
     content: " ";
-    background-image: url('/youtube_play.svg');
+    background-image: url('/socials/youtube_play.svg');
     min-width: 100px;
     min-height: 70px;
     position: absolute;
@@ -182,9 +208,15 @@ a:hover { color: rgb(0, 247, 255); }
     transform: translate(-50%, -50%);
 }
 
+ul {
+    padding-left: 28px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
 .feature {
     font-weight: bold;
-    margin-left: 32px;
+    padding: 2px;
 }
 
 .dev-icon {

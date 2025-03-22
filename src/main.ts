@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import { Notifications } from "./Notifications";
 import Blogs from "./Blogs";
 import Embeds from './Embeds';
+import ImageViewer from './ImageViewer';
 
 export { }
 
@@ -21,6 +22,7 @@ function init() {
     new Navbar();
     new Blogs();
     new Embeds();
+    new ImageViewer();
 
     // Test notifs
     /*let z = 0;
