@@ -173,9 +173,26 @@ a:hover { color: rgb(0, 247, 255); }
 .itch-embed {
     margin: auto;
     width: calc(100% - 32px);
-    max-width: 700px;
-    min-height: 200px;
+    max-width: 554px;
+    height: 169px !important;
     border: none;
+}
+
+.itch-embed {
+    margin: auto;
+    width: calc(100% - 32px);
+    max-width: 554px;
+    height: 169px !important;
+    border: none;
+}
+
+.itch-embed>img {
+    width: 99%;
+    height: 100%;
+    overflow: visible;
+    border: none;
+    object-fit: cover;
+    cursor: pointer;
 }
 
 .youtube-embed {

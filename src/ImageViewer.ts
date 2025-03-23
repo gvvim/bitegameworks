@@ -6,7 +6,6 @@ export default class ImageViewer {
         // Add viewable to image element to be able to view it in detail
         const images = document.querySelectorAll<HTMLImageElement>('.viewable');
         images.forEach(img => img.onclick = () => this.preview(img));
-        console.log(images);
 
         this.viewerRoot = document.createElement('div');
         this.viewerRoot.className = 'viewer-root';
