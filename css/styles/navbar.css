@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    flex-direction: horizontal;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -25,7 +25,7 @@ nav {
     height: 64px;
     display: flex;
     flex-direction: row;
-    justify-content: stretch;
+    justify-content: space-around;
 }
 
 .navbutton {

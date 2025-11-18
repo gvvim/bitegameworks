@@ -1,21 +1,23 @@
 <div class="page">
-    <h1 class="page-title">BLOG</h1>
-    <div class="page-parent">
-        <div class="list-title">Latest</div>
-        <div class="blogs-horizontal">
-            @@include('./components/blog_preview.html', { id: 'blog-latest-1' })
-            <div class="blogs-vertical">
-                @@include('./components/blog_preview.html', { id: 'blog-latest-2' })
-                @@include('./components/blog_preview.html', { id: 'blog-latest-3' })
+    <div class="scrollable">
+        <h1 class="page-title">BLOG</h1>
+        <div class="page-parent">
+            <div class="list-title">Latest</div>
+            <div class="blogs-horizontal">
+                @@include('./components/blog_preview.html', { id: 'blog-latest-1' })
+                <div class="blogs-vertical">
+                    @@include('./components/blog_preview.html', { id: 'blog-latest-2' })
+                    @@include('./components/blog_preview.html', { id: 'blog-latest-3' })
+                </div>
             </div>
-        </div>
 
-        <div class="list-title">All Blogs</div>
-        @@include('./components/searchbar.html', { input_id: 'search-blogs', clear_id:
-        'search-blogs-clear',
-        label_id:
-        'search-blogs-label'})
-        <div class="list" id="list-blogs">
+            <div class="list-title">All Blogs</div>
+            @@include('./components/searchbar.html', { input_id: 'search-blogs', clear_id:
+            'search-blogs-clear',
+            label_id:
+            'search-blogs-label'})
+            <div class="list" id="list-blogs">
+            </div>
         </div>
     </div>
     <div class="page-child project-page" id="blog-page">

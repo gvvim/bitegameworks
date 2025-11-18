@@ -2,11 +2,13 @@ export function lerp(a: number, b: number, t: number) {
     return t * b + (1 - t) * a;
 }
 
-export function animate(anim: (t: number) => void, duration: number) {
+export function animate(anim: (t: number) => void, duration: number, andThen?: () => {}) {
     let i = 0;
     const timer = setInterval(() => {
         if (i > duration) {
             clearInterval(timer);
+            if (andThen)
+                andThen();
         } else {
             const t = i / duration;
             anim(t);
